@@ -1,20 +1,24 @@
 package unsch;
 
 public class CuentaBancaria {
-    private double saldo;
-    public CuentaBancaria(double saldoInicial) {
-        this.saldo = saldoInicial;
-    }
-    public void depositar(double monto) {
-        saldo += monto;
-    }
-    public double obtenerSaldo() {
-        return saldo;
-    }
-    //AGREGANDO METODO DESDE RAMA2
-    public void retirar(double monto) {
-        if (monto <= saldo) {
-            saldo -= monto;
+    public class CuentaBancaria {
+        private double saldo;
+        public CuentaBancaria(double saldoInicial) {
+            this.saldo = saldoInicial;
         }
+        public void depositar(double monto) {
+            if (monto > 0) {
+                saldo += monto;
+            }
+        }
+        public void retirar(double monto) {
+            if (monto > 0 && monto <= saldo) {
+                saldo -= monto;
+            }
+        }
+        public double getSaldo() {
+            return saldo;
+        }
+
     }
 }
